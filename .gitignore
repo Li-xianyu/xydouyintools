@@ -1,0 +1,32 @@
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.local
+
+# Dependencies, caches and disposable build directories
+node_modules/
+__pycache__/
+*.py[cod]
+.cache/
+.next/
+dist/
+build/
+out/
+coverage/
+
+# Logs, editors and operating system files
+logs/
+*.log
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+Desktop.ini

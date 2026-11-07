@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "xyDouYinTools",
+  "version": "1.0.0",
+  "description": "将原油猴脚本重构为可直接加载的抖音增强 Chrome 扩展。",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "xyDouYinTools"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.douyin.com/*",
+        "https://live.douyin.com/*",
+        "https://www.douyin.com/follow/live/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "src/content/style-payload.js",
+        "src/shared/constants.js",
+        "src/shared/utils.js",
+        "src/shared/storage.js",
+        "src/content/runtime.js",
+        "src/content/modules/loading-screen.js",
+        "src/content/modules/styles.js",
+        "src/content/modules/liquid-glass.js",
+        "src/content/modules/message-dock.js",
+        "src/content/modules/sidebar.js",
+        "src/content/modules/navigation.js",
+        "src/content/modules/live-skip.js",
+        "src/content/modules/hide-elements.js",
+        "src/content/modules/ads-filter.js",
+        "src/content/modules/image-float.js",
+        "src/content/modules/mouse-gestures.js",
+        "src/content/modules/context-menu.js",
+        "src/content/modules/silent-menu.js",
+        "src/content/modules/proximity.js",
+        "src/content/modules/hotkeys.js",
+        "src/content/modules/comments-dock.js",
+        "src/content/modules/comments-interactive.js",
+        "src/content/main.js"
+      ],
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.douyin.com/*",
+        "https://live.douyin.com/*",
+        "https://www.douyin.com/follow/live/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "src/content/extension-bridge.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  }
+}
